@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.contact-app {
   display: flex;
-  flex-direction: column;
+  height: 100vh;
+}
+
+.sidebar {
+  flex: 0 0 300px;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.contact-list {
+  margin-top: 20px;
+  border-top: 2px solid #dfe1e5;
+  width: 100%;
+}
+
+.contact {
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+.contact a.active {
+  color: rgb(247, 14, 14);
+}
+.detail {
+  flex: 0 1 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  width: 500px;
+}
+
+.contact-details {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.contact-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.details {
+  flex: 1;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+}
+
+.button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.button-delete {
+  color: rgb(252, 5, 5);
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for the search bar */
+.search {
+  margin-bottom: 20px;
+}
+
+.form input {
+  width: 90%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #0056b3;
+}
+.controls {
+  display: flex;
+  gap: 10px;
 }
