@@ -1,12 +1,21 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Button from "./Button";
-import { getContactById } from "./Utils";
+import { deleteContact, getContactById } from "./Utils";
+import { contactList } from "./Contacts";
 
 const ContactDetails = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const contact = getContactById(id);
-  const handleEdit = () => {};
-  const handleDelete = () => {};
+
+  const handleEdit = (contactId) => {
+    navigate(`/contact/${contactId}/edit`);
+  };
+  const handleDelete = (contactId) => {
+    deleteContact(contactList, contactId);
+    navigate(-1);
+  };
+
   return (
     <div className="contact-details">
       <div className="contact-image">
@@ -17,11 +26,15 @@ const ContactDetails = () => {
         <p>{contact.profession}</p>
       </div>
       <div className="buttons">
-        <Button label="Edit" onClick={handleEdit} className="button" />
+        <Button
+          label="Edit"
+          className="button"
+          onClick={() => handleEdit(contact.id)}
+        />
         <Button
           label="Delete"
-          onClick={handleDelete}
           className="button-delete"
+          onClick={() => handleDelete(contact.id)}
         />
       </div>
     </div>

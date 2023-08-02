@@ -1,10 +1,12 @@
 import Contact from "./Contact";
-import { contactList } from "./Contacts";
+import { filterContactsBySearchQuery } from "./Utils";
 
-const ContactList = () => {
+const ContactList = ({ query }) => {
+  const filteredContactList = filterContactsBySearchQuery(query);
+
   return (
     <div className="contact-list">
-      {contactList.map((contact) => (
+      {filteredContactList.map((contact) => (
         <Contact key={contact.id} contact={contact} />
       ))}
     </div>

@@ -3,15 +3,20 @@ import "./App.css";
 import ContactList from "./ContactList";
 import Form from "./Form";
 import Search from "./Search";
-
+import { useState } from "react";
 const ContactApp = () => {
+  const [query, setQuery] = useState("");
+  const handleSearch = (e) => {
+    setQuery(e.target.value);
+  };
+
   return (
     <div className="contact-app">
       <div className="sidebar">
         <Search>
-          <Form />
+          <Form query={query} handleSearch={handleSearch} />
         </Search>
-        <ContactList />
+        <ContactList query={query} />
       </div>
       <div className="detail">
         {/* Outlet element renders the child route elements of the parent element */}
